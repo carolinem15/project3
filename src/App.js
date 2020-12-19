@@ -1,4 +1,3 @@
-// Skeleton code for routing with react
 // Disregard many of the comments, they are mostly notes to myself
 
 import React from 'react'

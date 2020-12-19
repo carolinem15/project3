@@ -1,3 +1,5 @@
+// Disregard many of the comments, they are mostly notes to myself
+
 // require('dotenv').config()
 
 const express = require('express')
@@ -7,6 +9,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+// setting the URI for the database (default to localhost if it's not defined) & connecting it
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/auth'
 const PORT = process.env.PORT || 3001
 
@@ -21,7 +24,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 //GET method for API
-app.get('', (req, res) => {
+app.get('pathto/API', (req, res) => {
 	res.json({message: ""})
 })
 
@@ -30,7 +33,7 @@ app.use('/api/users', usersRoutes)
 
 // Route for default homepage
 app.use('*', (req, res) => {
-	res.sendFile(`${__dirname}/client/build/index.html`)
+	res.sendFile(`${__dirname}/path/to/defaulthomepage`)
 })
 
 app.listen(PORT, (err) => {
