@@ -13,18 +13,16 @@ importControllerVariableName.route('/').get(usersCtrl.index)
 // POST request: this one specifically adds a new user (sign up)
 importControllerVariableName.route('/').post(usersCtrl.create)
 
-importControllerVariableName.post('/authenticate', usersCtrl.authenticate)
+// this route is the path that gets executed when a user logs in, but I don't understand it enough to apply it yet
+// importControllerVariableName.post('/authenticate', usersCtrl.authenticate)
 
-importControllerVariableName.use(verifyToken)
+// ??? this basically grabs the token coming in and executes verifyToken but it's still super confusing. somehow this is
+// a firewall
+// importControllerVariableName.use(verifyToken)
 
+// GET request that tests whether the firewall above is working, since we are now on the protected side of the firewall
 importControllerVariableName.route('/test').get((req, res) => {    
     res.json({'message': 'Life is Good'})
 })
-
-importControllerVariableName.route('/secret').get(usersCtrl.show)
-
-importControllerVariableName.route('/:id').patch(usersCtrl.update)
-
-importControllerVariableName.route('/:id').delete(usersCtrl.destroy)
 
 module.exports = importControllerVariableName
