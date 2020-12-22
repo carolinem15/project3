@@ -6,6 +6,7 @@ const express = require('express')
 // const logger = require('morgan')
 const mongoose = require('mongoose')
 const googleRouter = require('./routes/google')
+const cors = require('cors')
 // const usersRoutes = require('./routes')
 
 const app = express()
@@ -20,6 +21,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 })
 
 app.use(express.static(`${__dirname}/client/build`))
+app.use(cors())
 // app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
