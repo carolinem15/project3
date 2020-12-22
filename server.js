@@ -5,6 +5,7 @@
 const express = require('express')
 // const logger = require('morgan')
 const mongoose = require('mongoose')
+const googleRouter = require('./routes/google')
 // const usersRoutes = require('./routes')
 
 const app = express()
@@ -29,7 +30,9 @@ app.get('pathto/API', (req, res) => {
 })
 
 // 
-app.use('/api/users', usersRoutes)
+// app.use('/api/users', usersRoutes)
+
+app.use('/api/google', googleRouter)
 
 // Route for default homepage
 app.use('*', (req, res) => {
