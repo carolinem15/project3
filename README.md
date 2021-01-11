@@ -33,6 +33,7 @@ There are no tests for this application.
 [Victoria Smith](https://github.com/vsmith408)
 ----
 [Phil Robbins](https://github.com/plrobbins)
+----
 
 ## Credits
 
