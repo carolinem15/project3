@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const favRoutes = require("./favapi");
 
-// Book routes
-router.use("/", favRoutes);
+// favorite routes
+router.use("/favorite", favRoutes);
 
 module.exports = router;

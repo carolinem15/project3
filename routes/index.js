@@ -1,5 +1,6 @@
 // Disregard many of the comments, they are mostly notes to myself
 const express = require('express')
+const path = require("path");
 // import controller
 // import something to do with auth here. in the secure2 app that we covered in class, it looks like:
 // const verifyToken = require('../auth').verifyToken, but I don't understand this enough yet to include it in the code
@@ -28,8 +29,8 @@ importControllerVariableName.route('/test').get((req, res) => {
 ///=====import favorite routes
 const router = require("express").Router();
 const apiRoutes = require("./api");
-router.use("/", favRoutes);
-router.use("/api/favorite", apiRoutes);
+//router.use("/", favRoutes);
+router.use("/api", apiRoutes);
 
 module.exports = importControllerVariableName;
 module.exports = router;

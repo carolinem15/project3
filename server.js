@@ -7,12 +7,16 @@ const express = require('express')
 const mongoose = require('mongoose')
 const googleRouter = require('./routes/google')
 const cors = require('cors')
-const favRoutes = require("./routes/api");
+const routes = require("./routes");
 
 const app = express()
 
 // setting the URI for the database (default to localhost if it's not defined) & connecting it
+/*
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/auth'
+*/
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/favorites"
 const PORT = process.env.PORT || 3001
 
 mongoose.set('useCreateIndex', true)
@@ -31,9 +35,13 @@ app.get('pathto/API', (req, res) => {
 	res.json({message: ""})
 })
 
-// 
+// calling in routes
+/*
 app.use('/api', favRoutes)
-
+app.use("/", favRoutes);
+app.use("/api/favorite", favRoutes);
+*/
+app.use(routes);
 app.use('/api/google', googleRouter)
 
 // Route for default homepage
