@@ -27,8 +27,9 @@ importControllerVariableName.route('/test').get((req, res) => {
 
 ///=====import favorite routes
 const router = require("express").Router();
+const apiRoutes = require("./api");
 router.use("/", favRoutes);
-router.use("/api/favorite", favRoutes);
+router.use("/api/favorite", apiRoutes);
 
 module.exports = importControllerVariableName;
 module.exports = router;
