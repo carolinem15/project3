@@ -7,7 +7,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const googleRouter = require('./routes/google')
 const cors = require('cors')
-// const usersRoutes = require('./routes')
+const favRoutes = require("./routes/api");
 
 const app = express()
 
@@ -32,7 +32,7 @@ app.get('pathto/API', (req, res) => {
 })
 
 // 
-// app.use('/api/users', usersRoutes)
+app.use('/api', favRoutes)
 
 app.use('/api/google', googleRouter)
 

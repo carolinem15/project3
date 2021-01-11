@@ -25,4 +25,10 @@ importControllerVariableName.route('/test').get((req, res) => {
     res.json({'message': 'Life is Good'})
 })
 
-module.exports = importControllerVariableName
+///=====import favorite routes
+const router = require("express").Router();
+router.use("/", favRoutes);
+router.use("/api/favorite", favRoutes);
+
+module.exports = importControllerVariableName;
+module.exports = router;
